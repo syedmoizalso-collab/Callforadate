@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Date ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="hearts"></div>
+
+    <main class="card">
+
+        <!-- Replace photo3.jpg with your own photo -->
+        <img
+            src="photo3.jpg"
+            alt="A special photo"
+            class="main-photo"
+        >
+
+        <h1 id="dateMessage">
+            See you soon ❤️
+        </h1>
+
+        <p class="subtitle">
+            Till then, listen to this song dedicated to you. 🎵
+        </p>
+
+        <a
+            id="spotifyButton"
+            class="spotify-btn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            🎵 Listen to your song
+        </a>
+
+    </main>
+
+
+<script>
+
+    /*
+    Get the date she selected
+    */
+
+    const selectedDate =
+        localStorage.getItem("selectedDate");
+
+
+    /*
+    Find the message and Spotify button
+    */
+
+    const dateMessage =
+        document.getElementById("dateMessage");
+
+    const spotifyButton =
+        document.getElementById("spotifyButton");
+
+
+    /*
+    5th September
+    */
+
+    if (selectedDate === "5th September 2026") {
+
+        dateMessage.innerHTML =
+            "See you on 5th September 2026! ❤️";
+
+        spotifyButton.href =
+            "https://open.spotify.com/track/72CkpVdvmc8t28o8I9N32J?si=fK2dnYzlSQ6eIMdRQqhTZA";
+
+    }
+
+
+    /*
+    6th September
+    */
+
+    else if (selectedDate === "6th September 2026") {
+
+        dateMessage.innerHTML =
+            "See you on 6th September 2026! ❤️";
+
+        spotifyButton.href =
+            "https://open.spotify.com/track/5bQ6oDLqvw8tywmnSmwEyL?si=B_Nqc06_QTSJyI06LNpz5Q";
+
+    }
+
+
+    /*
+    If someone opens final.html directly
+    */
+
+    else {
+
+        dateMessage.innerHTML =
+            "Something special is waiting for you ❤️";
+
+    }
+
+</script>
+
+</body>
+
+</html>
