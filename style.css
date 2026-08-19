@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    font-family: "Georgia", serif;
+
+    background:
+        radial-gradient(circle at top, #ffe8f0, transparent 45%),
+        linear-gradient(135deg, #fff5f7, #ffdce7);
+
+    overflow: hidden;
+    color: #5a2635;
+}
+
+/* Main card */
+
+.card {
+    width: min(430px, 100%);
+    padding: 30px 24px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(120, 35, 65, 0.18);
+
+    backdrop-filter: blur(10px);
+
+    position: relative;
+    z-index: 2;
+
+    animation: appear 1s ease;
+}
+
+/* Photo */
+
+.main-photo {
+    width: 100%;
+    max-width: 330px;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    display: block;
+    margin: 0 auto 25px;
+
+    box-shadow:
+        0 10px 30px rgba(100, 30, 50, 0.18);
+}
+
+/* Heading */
+
+h1 {
+    font-size: clamp(28px, 7vw, 38px);
+    line-height: 1.2;
+
+    margin-bottom: 12px;
+}
+
+/* Subtitle */
+
+.subtitle {
+    font-size: 17px;
+    opacity: 0.75;
+
+    margin-bottom: 28px;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.yes-btn {
+    background: #e75480;
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(231, 84, 128, 0.35);
+}
+
+.no-btn {
+    background: #f3e2e7;
+    color: #6b3445;
+}
+
+/* Floating hearts */
+
+.hearts::before,
+.hearts::after {
+    content: "♥  ♥  ♥  ♥  ♥";
+
+    position: fixed;
+
+    left: 0;
+    width: 100%;
+
+    font-size: 24px;
+
+    letter-spacing: 40px;
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+    animation: float 8s linear infinite;
+}
+
+.hearts::before {
+    top: 100%;
+}
+
+.hearts::after {
+    top: 110%;
+    animation-delay: 4s;
+}
+
+/* Animations */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+@keyframes float {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120vh);
+    }
+
+}
