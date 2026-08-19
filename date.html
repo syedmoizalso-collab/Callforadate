@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Our Date ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="hearts"></div>
+
+    <main class="card">
+
+        <!-- Replace photo2.jpg with your own photo -->
+        <img
+            src="photo2.jpg"
+            alt="A special photo"
+            class="main-photo"
+        >
+
+        <h1>When are you free for a date? 🥰</h1>
+
+        <p class="subtitle">
+            Pick the day you would like to spend with me ❤️
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="yes-btn"
+                onclick="chooseDate('5th September 2026')"
+            >
+                5th September ❤️
+            </button>
+
+            <button
+                class="yes-btn"
+                onclick="chooseDate('6th September 2026')"
+            >
+                6th September 💕
+            </button>
+
+        </div>
+
+    </main>
+
+
+<script>
+
+    const GOOGLE_FORM_URL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSc28yc45jHU43WHw-4nm1hPmrI0QRxgV8ETzWIFn67TggTegQ/formResponse";
+
+
+    function chooseDate(date) {
+
+        const formData = new FormData();
+
+        /*
+        Record the selected date
+        */
+
+        formData.append(
+            "entry.835676113",
+            date
+        );
+
+        /*
+        Submit to Google Form
+        */
+
+        fetch(GOOGLE_FORM_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: formData
+        });
+
+
+        /*
+        Save the selected date locally
+        so the final page knows which
+        date was selected.
+        */
+
+        localStorage.setItem(
+            "selectedDate",
+            date
+        );
+
+
+        /*
+        Go to the final page
+        */
+
+        window.location.href = "final.html";
+
+    }
+
+</script>
+
+</body>
+
+</html>
