@@ -18,10 +18,12 @@
 
         <!-- Replace photo3.jpg with your own photo -->
         <img
+
+            id="finalPhoto"
             src="photo3.jpg"
             alt="A special photo"
             class="main-photo"
-        >
+           >
 
         <h1 id="dateMessage">
             See you soon ❤️
@@ -71,14 +73,16 @@
 
     if (selectedDate === "5th September 2026") {
 
-        dateMessage.innerHTML =
-            "See you on 5th September 2026! ❤️";
+    dateMessage.innerHTML =
+        "See you on 5th September 2026! ❤️";
 
-        spotifyButton.href =
-            "https://open.spotify.com/track/72CkpVdvmc8t28o8I9N32J?si=fK2dnYzlSQ6eIMdRQqhTZA";
+    document.getElementById("finalPhoto").src =
+        "photo3.jpg";
 
-    }
+    spotifyButton.href =
+        "https://open.spotify.com/track/72CkpVdvmc8t28o8I9N32J?si=fK2dnYzlSQ6eIMdRQqhTZA";
 
+}
 
     /*
     6th September
@@ -86,13 +90,16 @@
 
     else if (selectedDate === "6th September 2026") {
 
-        dateMessage.innerHTML =
-            "See you on 6th September 2026! ❤️";
+    dateMessage.innerHTML =
+        "See you on 6th September 2026! ❤️";
 
-        spotifyButton.href =
-            "https://open.spotify.com/track/5bQ6oDLqvw8tywmnSmwEyL?si=B_Nqc06_QTSJyI06LNpz5Q";
+    document.getElementById("finalPhoto").src =
+        "photo4.jpg";
 
-    }
+    spotifyButton.href =
+        "https://open.spotify.com/track/5bQ6oDLqvw8tywmnSmwEyL?si=B_Nqc06_QTSJyI06LNpz5Q";
+
+}
 
 
     /*
